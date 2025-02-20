@@ -1,2 +1,2 @@
 youtube-transcript-api
-git+https://github.com/Vu0401/vswarm.git
+git+https://github.com/Vu0401/zswarm.git
