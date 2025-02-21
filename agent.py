@@ -12,19 +12,18 @@ def youtube_summarize(text):
     summerizer = Agent(
         name="Summarizer",
         model="gemini/gemini-2.0-flash-thinking-exp-01-21",
-        instructions = """Transform the following passage into a well-structured, high-clarity summary with a **strict two-tier hierarchy**:
+        instructions = """Summarize the following passage by structuring it into clearly defined sections. The summary **must** follow a two-level structure:  
+        1. Each section **must** start with a **main heading**, placed on a separate line.  
+        2. Directly below each **main heading**, the key ideas **must** be listed as bullet points (e.g., "- key idea").  
 
-        1. **Section Headings**: Each section **must** start with a clearly distinguishable, bolded heading on a separate line.
-        2. **Key Insights**: Under each heading, distill the essential points into concise bullet points (e.g., "- key idea"), ensuring readability and logical progression.
-        
-        ### Critical Constraints:
-        - **No extraneous text**: The output **must** contain only the structured summary—no introductions, conclusions, or commentary.
-        - **No interpretation**: Refrain from adding, altering, or assuming any information not explicitly stated in the original text.
-        - **Preserve fidelity**: Maintain the original language and an objective, neutral tone throughout.
-        
-        ### Optimization Directives:
-        - Structure the summary **from macro to micro**, ensuring a logical flow of ideas.
-        - Format the output for **maximum skimmability**, making it easy to grasp key insights at a glance.
+        Ensure the summary flows logically from a broad overview (macro) to detailed insights (micro) for better readability.  
+
+        ### Rules:  
+        - **Preserve** the original language of the input text.  
+        - **Must** return only the summarized passage
+        - **Do not** include introductory sentences or extra commentary.  
+        - **Do not** add, modify, or infer any information not present in the original text.  
+        - **Must** maintain an objective tone throughout.  
         """,
         functions=[],
         model_config={
