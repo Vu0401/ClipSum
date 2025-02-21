@@ -13,7 +13,7 @@ def youtube_summarize(text):
         name="Summarizer",
         model="gemini/gemini-2.0-flash-thinking-exp-01-21",
         instructions = """Summarize the following passage by organizing it into clearly defined sections. For each section:
-        1. Start with a numbered main heading.
+        1. Start with a main heading.
         2. Under each heading, list the key ideas as bullet points.
 
         Ensure the summary flows from a broad overview to detailed insights for better readability.
@@ -36,5 +36,5 @@ def youtube_summarize(text):
     )
 
     res = response.messages[-1]["content"]
-    res = res.replace("*", "")
+    #res = res.replace("*", "")
     return res
