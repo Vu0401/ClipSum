@@ -5,7 +5,7 @@ from agent import youtube_summarize
 from config import AVAILABLE_LANGUAGES
 
 # Hàm lấy transcript với retry
-def get_transcript_with_retry(video_id, lang, retries=5, delay=2):
+def get_transcript_with_retry(video_id, lang, retries=3, delay=2):
     for attempt in range(retries):
         try:
             return yta.get_transcript(video_id, languages=[lang])
