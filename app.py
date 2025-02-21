@@ -16,7 +16,7 @@ def get_transcript_with_retry(video_id, lang, retries=10, delay=1):
                 raise e
 
 def main():
-    st.set_page_config(page_title="ClipSum", page_icon=":robot_face:", layout="wide")  
+    st.set_page_config(page_title="ClipSum", page_icon=":rocket:", layout="wide")  
 
     # Set sidebar title
     st.sidebar.title("ClipSum")
