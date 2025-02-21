@@ -29,7 +29,7 @@ def main():
     st.sidebar.subheader("Chat History")
     if st.session_state["history"]:
         for summary in st.session_state["history"][-5:]:  # Show only the last 5 summaries
-            first_line = summary.split("\n")[2]  # Extract the first line
+            first_line = summary.split("\n")[2].strip()  # Extract the first line
             if len(first_line) > 50:  # Truncate if it's too long
                 first_line = first_line[:50] + "..."
             with st.sidebar.expander(f"🔹 {first_line}"):
