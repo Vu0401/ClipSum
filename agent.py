@@ -11,7 +11,7 @@ client = Swarm()
 def youtube_summarize(text):
     summerizer = Agent(
         name="Summarizer",
-        model="gemini/gemini-2.0-flash-thinking-exp-01-21",
+        model="gemini/gemini-2.0-pro-exp-02-05",
         instructions = """Summarize the following passage by structuring it into clearly defined sections. The summary **must** follow a two-level structure:  
         1. Each section **must** start with a **main heading**, placed on a separate line.  
         2. Directly below each **main heading**, the key ideas **must** be listed as bullet points (e.g., "- key idea").  
