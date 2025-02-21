@@ -16,10 +16,10 @@ def get_transcript_with_retry(video_id, lang, retries=10, delay=1):
                 raise e
 
 def main():
-    st.set_page_config(page_title="ChatVPT", page_icon=":robot_face:", layout="wide")  
+    st.set_page_config(page_title="ClipSum", page_icon=":robot_face:", layout="wide")  
 
     # Set sidebar title
-    st.sidebar.title("ChatVPT")
+    st.sidebar.title("ClipSum")
     
     # Initialize summary history in session state
     if "history" not in st.session_state:
