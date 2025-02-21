@@ -1,7 +1,19 @@
 import streamlit as st
+import time
 from youtube_transcript_api import YouTubeTranscriptApi as yta
 from agent import youtube_summarize
-from config import AVAILABLE_LANGUAGES  
+from config import AVAILABLE_LANGUAGES
+
+# Hàm lấy transcript với retry
+def get_transcript_with_retry(video_id, lang, retries=5, delay=2):
+    for attempt in range(retries):
+        try:
+            return yta.get_transcript(video_id, languages=[lang])
+        except Exception as e:
+            if attempt < retries - 1:
+                time.sleep(delay)
+            else:
+                raise e
 
 def main():
     st.set_page_config(page_title="ChatVPT", page_icon=":robot_face:", layout="wide")  
@@ -52,11 +64,11 @@ def main():
 
                 # Extract video ID from the URL
                 video_id = youtube_url.split("v=")[1].split("&")[0]
-
+                print(video_id)
                 # Show a loading spinner while processing
                 with st.spinner("🔍 Extracting subtitles and summarizing... This may take a moment!"):
-                    # Fetch transcript from YouTube
-                    list_text = yta.get_transcript(video_id, languages=[AVAILABLE_LANGUAGES[selected_lang]])
+                    # Fetch transcript from YouTube with retry logic
+                    list_text = get_transcript_with_retry(video_id, AVAILABLE_LANGUAGES[selected_lang])
                     text = " ".join([d["text"] for d in list_text])
 
                     # Summarize using LLM
