@@ -22,7 +22,7 @@
 - **YouTube Transcript API** (Subtitle extraction)  
 - **LLM-based Summarization** (AI-generated summaries)  
 
-## 🛠️ Installation  
+## 🛠️ Local Installation  
 
 ```bash
 # Clone the repository
