@@ -51,7 +51,7 @@ def main():
                     return
 
                 # Extract video ID from the URL
-                video_id = youtube_url.split("v=")[1].split("&")[0]
+                video_id = youtube_url.split("v=")[1]
 
                 # Show a loading spinner while processing
                 with st.spinner("🔍 Extracting subtitles and summarizing... This may take a moment!"):
