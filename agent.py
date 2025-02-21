@@ -13,7 +13,7 @@ def youtube_summarize(text):
         name="Summarizer",
         model="gemini/gemini-2.0-flash-thinking-exp-01-21",
         instructions = """Summarize the following passage by breaking it into clear, distinct sections. For each section:
-        1. Begin with a numbered main heading.
+        1. Begin with a main heading.
         2. List the key points underneath as bullet points.
         
         Ensure the summary flows from a broad overview (macro) to detailed insights (micro) for enhanced readability.
