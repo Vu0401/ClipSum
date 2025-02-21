@@ -69,9 +69,12 @@ def main():
                     # Summarize using LLM
                     result = youtube_summarize(text)
 
-                # Display the summary after processing with a scrollable container
+                # Display the summary after processing with a scrollable container with border
                 st.success("✅ Summary is ready!")
-                st.markdown(f'<div style="height:300px; overflow-y: auto;">{result}</div>', unsafe_allow_html=True)
+                st.markdown(
+                    f'<div style="border: 1px solid #ccc; padding: 10px; border-radius: 5px; height:300px; overflow-y: auto;">{result}</div>', 
+                    unsafe_allow_html=True
+                )
 
                 # Save the summary to history
                 st.session_state["history"].append(result)
