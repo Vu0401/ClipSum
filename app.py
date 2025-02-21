@@ -67,8 +67,9 @@ def main():
                     list_text = get_transcript_with_retry(video_id, AVAILABLE_LANGUAGES[selected_lang])
                     text = " ".join([d["text"] for d in list_text])
                     # Summarize using LLM
-                    result = youtube_summarize(text)
-
+                    result = "\n\n" + youtube_summarize(text)
+                
+                print(result)
                 # Display the summary after processing with a scrollable container with border
                 st.success("✅ Summary is ready!")
                 st.markdown(
