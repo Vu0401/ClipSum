@@ -37,4 +37,6 @@ def youtube_summarize(text):
     )
 
     res = response.messages[-1]["content"]
+    res = res.replace("</div>", "").replace("|", "").strip()
+
     return res
