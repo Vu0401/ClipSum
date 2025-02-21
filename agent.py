@@ -12,12 +12,17 @@ def youtube_summarize(text):
     summerizer = Agent(
         name="Summarizer",
         model="gemini/gemini-2.0-flash-thinking-exp-01-21",
-        instructions = """Please help me summarize the following passage logically. 
-        Summarize the content by dividing it into clear sections, each starting with a numbered main heading followed by bullet points.
-        The sections should progress from a macro to a micro perspective.
-        Present the information from an overview to details for better readability. Do not add, modify, or infer any information. 
-        Important: Maintain an objective tone and **must not** return any introductory sentences—only the summarized passage itself without any explanations. 
-        Note: Keep the original language of the input text. 
+        instructions = """Summarize the following passage by breaking it into clear, distinct sections. For each section:
+        1. Begin with a numbered main heading.
+        2. List the key points underneath as bullet points.
+        
+        Ensure the summary flows from a broad overview (macro) to detailed insights (micro) for enhanced readability.
+        
+        Rules:
+        - Do not add, modify, or infer any information.
+        - Maintain an objective tone.
+        - Return only the summarized passage—no introductory sentences or extra explanations.
+        - Preserve the original language of the input text.
         """,
         functions=[],
         model_config={
