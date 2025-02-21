@@ -76,7 +76,8 @@ def main():
 
                 # Display the summary after processing
                 st.success("✅ Summary is ready!")
-                st.text_area("Summary:", result, height=300)
+                #st.text_area("Summary:", result, height=300)
+                st.markdown(result)
 
                 # Save the summary to history
                 st.session_state["history"].append(result)
