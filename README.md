@@ -3,7 +3,7 @@
 
 **YouTube-Summarize** is a Streamlit-based web application that extracts and summarizes transcripts from YouTube videos using AI-powered language models. It helps users quickly understand video content by providing structured, easy-to-read summaries.  
 
-🔗 **Live Demo:** [ClipSum](https://chatvpt.streamlit.app)  
+🔗 **Live Demo:** [ClipSum](https://clipsum.streamlit.app)  
 
 ## ✨ Features  
 - 🔍 **Automatic Transcript Retrieval** – Fetches subtitles from YouTube videos in the selected language.  
