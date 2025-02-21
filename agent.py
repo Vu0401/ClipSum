@@ -21,7 +21,7 @@ def youtube_summarize(text):
         ### Rules:  
         - **Preserve** the original language of the input text.  
         - **Must** return only the summarized passage
-        - **do not** include introductory sentences or extra commentary.  
+        - **Do not** include introductory sentences or extra commentary.  
         - **Do not** add, modify, or infer any information not present in the original text.  
         - **Must** maintain an objective tone throughout.  
         """,
