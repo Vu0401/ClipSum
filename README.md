@@ -27,10 +27,10 @@
 
 ```bash
 # Clone the repository
-git clone https://github.com/your-username/youtube-summarize.git
+git clone https://github.com/Vu0401/ClipSum.git
 
 # Navigate to the project directory
-cd youtube-summarize
+cd ClipSum
 
 # Install dependencies
 pip install -r requirements.txt
