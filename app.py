@@ -4,8 +4,8 @@ from youtube_transcript_api import YouTubeTranscriptApi as yta
 from agent import youtube_summarize
 from config import AVAILABLE_LANGUAGES
 
-# Hàm lấy transcript với retry
-def get_transcript_with_retry(video_id, lang, retries=5, delay=1):
+# Function to fetch transcript with retry logic
+def get_transcript_with_retry(video_id, lang, retries=10, delay=1):
     for attempt in range(retries):
         try:
             return yta.get_transcript(video_id, languages=[lang])
@@ -32,8 +32,6 @@ def main():
             first_line = summary.split("\n")[0]  # Extract the first line
             if len(first_line) > 50:  # Truncate if it's too long
                 first_line = first_line[:50] + "..."
-
-            # Expandable sections to show full summaries
             with st.sidebar.expander(f"🔹 {first_line}"):
                 st.write(summary)
 
@@ -64,19 +62,16 @@ def main():
 
                 # Extract video ID from the URL
                 video_id = youtube_url.split("v=")[1].split("&")[0]
-                # Show a loading spinner while processing
                 with st.spinner("🔍 Extracting subtitles and summarizing... This may take a moment!"):
                     # Fetch transcript from YouTube with retry logic
                     list_text = get_transcript_with_retry(video_id, AVAILABLE_LANGUAGES[selected_lang])
                     text = " ".join([d["text"] for d in list_text])
-
                     # Summarize using LLM
                     result = youtube_summarize(text)
 
-                # Display the summary after processing
+                # Display the summary after processing with a scrollable container
                 st.success("✅ Summary is ready!")
-                #st.text_area("Summary:", result, height=300)
-                st.markdown(result)
+                st.markdown(f'<div style="height:300px; overflow-y: auto;">{result}</div>', unsafe_allow_html=True)
 
                 # Save the summary to history
                 st.session_state["history"].append(result)
