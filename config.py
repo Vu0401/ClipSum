@@ -30,7 +30,7 @@ AVAILABLE_LANGUAGES = {
     "Divehi": "dv",
     "Dutch": "nl",
     "Dzongkha": "dz",
-    "English": "en",
+    "English": "eng",
     "Esperanto": "eo",
     "Estonian": "et",
     "Ewe": "ee",
