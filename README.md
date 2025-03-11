@@ -1,4 +1,4 @@
-# ClipSum – Smart YouTube Video Summarizer 🚀
+# ClipSum – Smart YouTube Video Summarizer
 
 <p align="center">
   <img src="assets/ClipSum.jpg" alt="AskDocs Logo" width="300">
