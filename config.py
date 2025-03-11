@@ -146,7 +146,7 @@ AVAILABLE_LANGUAGES = {
     "Uyghur": "ug",
     "Uzbek": "uz",
     "Venda": "ve",
-    "Vietnamese": "vi",
+    "Vietnamese": "vie",
     "Waray": "war",
     "Welsh": "cy",
     "Western Frisian": "fy",
