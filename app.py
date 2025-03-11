@@ -56,8 +56,8 @@ def main():
             st.markdown(
                 f"""
                 <div style="text-align: center;">
-                    <img src="data:image/jpeg;base64,{img_str}" alt="ClipSum Logo" width="200" 
-                    style="border-radius: 15px; border: 3px solid #000000; box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);">
+                    <img src="data:image/jpeg;base64,{img_str}" alt="ClipSum Logo" width="250" 
+                    style="border-radius: 15px; border: 4px solid #FFFFFF; box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.6);">
                 </div>
                 """,
                 unsafe_allow_html=True
