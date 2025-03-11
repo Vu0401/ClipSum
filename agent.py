@@ -21,7 +21,7 @@ def youtube_summarize(text):
         ### Rules:  
         - **Preserve** the original language of the input text.  
         - **Must** return only the summarized passage
-        - **Do not** include introductory sentences or extra commentary.  
+        - **do not** include introductory sentences or extra commentary.  
         - **Do not** add, modify, or infer any information not present in the original text.  
         - **Must** maintain an objective tone throughout.  
         """,
@@ -36,7 +36,6 @@ def youtube_summarize(text):
         messages=[{"role": "user", "content":  text}],
     )
 
-    res = response.messages[-1]["content"]
-    res = res.replace("</div>", "").replace("```", "").strip()
-
+    res = response.messages[-1]["content"].replace("```", "").replace("div", "").strip()
     return res
+
