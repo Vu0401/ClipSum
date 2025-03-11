@@ -1,5 +1,8 @@
 # ClipSum – Smart YouTube Video Summarizer 🚀
 
+<p align="center">
+  <img src="assets/ClipSum.jpg" alt="AskDocs Logo" width="300">
+</p>
 
 **YouTube-Summarize** is a Streamlit-based web application that extracts and summarizes transcripts from YouTube videos using AI-powered language models. It helps users quickly understand video content by providing structured, easy-to-read summaries.  
 
