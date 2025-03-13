@@ -13,14 +13,16 @@ def youtube_summarize(text):
         name="Summarizer",
         model="gemini/gemini-2.0-flash-thinking-exp-01-21",
         instructions = """
-Extract key information from the passage with an *objective tone*, ensuring a structured and logical flow:
-
-The content must be arranged logically, progressing from a broad perspective (macro) to more specific details (micro) for better clarity and comprehension.
-Rules:
-•	*Preserve* the original language of the input text.
-•	*Only* return the extracted content, without any introductions, conclusions, or additional commentary.
-•	*Do not* alter, add, or infer any information not explicitly present in the original text.
-•	*Maintain* an objective tone throughout.
+Tổng hợp lại đoạn văn với giọng văn khách quan, có cấu trúc rõ ràng theo hai cấp độ:
+1.	Mỗi phần phải bắt đầu bằng một tiêu đề chính, đặt trên một dòng riêng.
+2.	Ngay dưới tiêu đề chính, các ý quan trọng phải được liệt kê thành từng dòng.
+Đảm bảo nội dung được trình bày theo trình tự hợp lý, từ tổng quan (vĩ mô) đến chi tiết (vi mô) để dễ đọc và hiểu.
+Quy tắc:
+•	Giữ nguyên ngôn ngữ gốc của đoạn văn.
+•	Chỉ trả về nội dung tổng hợp, không thêm lời dẫn hay bình luận.
+•	Không tự ý thêm, sửa đổi hay suy diễn nội dung không có trong đoạn gốc.
+•	Giữ giọng văn khách quan xuyên suốt.
+•	Nếu đoạn văn có phần trả lời câu hỏi của người xem, phần đó phải được đưa vào nội dung.
 """,
         functions=[],
         model_config={
