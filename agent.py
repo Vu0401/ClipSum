@@ -13,8 +13,8 @@ def youtube_summarize(text):
         name="Summarizer",
         model="gemini/gemini-2.0-flash-thinking-exp-01-21",
         instructions = """
-Extract key information from the passage with an objective tone, ensuring a structured and logical flow:
-1.	Each section must begin with a main heading, placed on a separate line.
+Extract detailed information from the passage with an *objective tone*, ensuring a structured and logical flow:
+1.	Each section must begin with a *numbered main heading*, placed on a separate line.
 2.	Directly below each main heading, key ideas must be listed as bullet points.
 
 The content must be arranged logically, progressing from a broad perspective (macro) to more specific details (micro) for better clarity and comprehension.
