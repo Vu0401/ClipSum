@@ -21,7 +21,7 @@ Detailed content compilation with an objective tone and clear structure:
 - Intermediate level: Global corporations, multinational enterprises, and the effects of international policies.
 - Micro level: Domestic context, local businesses, and their influence on citizens and the national market.
 
-*MUST Rules*:
+*MUST RULES*:
 - Preserve the original language of the passage without translating or reinterpreting.
 - Only return the compiled content, excluding any introductions, conclusions, or external commentary.
 - Do not add, modify, or infer any information not explicitly stated in the original text.
