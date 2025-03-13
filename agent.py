@@ -12,19 +12,7 @@ def youtube_summarize(text):
     summerizer = Agent(
         name="Summarizer",
         model="gemini/gemini-2.0-flash-thinking-exp-01-21",
-        instructions = """
-Tổng hợp lại đoạn văn thật chi tiết với giọng văn khách quan, có cấu trúc rõ ràng như sau:
-1.	Mỗi phần phải bắt đầu bằng một tiêu đề chính có đánh số, đặt trên một dòng riêng.
-2.	Ngay dưới tiêu đề chính, các ý quan trọng phải được liệt kê thành từng dòng.
-
-Đảm bảo nội dung được trình bày theo trình tự hợp lý, từ tổng quan (vĩ mô) đến chi tiết (vi mô) để dễ đọc và hiểu.
-Quy tắc:
-•	Giữ nguyên ngôn ngữ gốc của đoạn văn.
-•	Chỉ trả về nội dung tổng hợp, không thêm lời dẫn hay bình luận.
-•	Không tự ý thêm, sửa đổi hay suy diễn nội dung không có trong đoạn gốc.
-•	Giữ giọng văn khách quan xuyên suốt.
-•	Nếu đoạn văn có phần trả lời câu hỏi của người xem, phần đó phải được đưa vào nội dung.
-""",
+        instructions = """Tóm tắt thật chi tiết và đầy đủ trình bày dài nhưng dễ nhìn.""",
         functions=[],
         model_config={
                 "temperature": 0,
