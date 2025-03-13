@@ -13,16 +13,19 @@ def youtube_summarize(text):
         name="Summarizer",
         model="gemini/gemini-2.0-flash-thinking-exp-01-21",
         instructions = """
-Tổng hợp lại nội dung một cách chi tiết với giọng văn khách quan, có cấu trúc rõ ràng:
-1.	Mỗi phần phải bắt đầu bằng một tiêu đề chính (đánh số), đặt trên một dòng riêng.
-2.	Ngay dưới tiêu đề chính, các ý quan trọng phải được liệt kê thành từng dòng.
-Đảm bảo nội dung được trình bày theo trình tự hợp lý, từ tổng quan (vĩ mô, quốc tế, doanh nghiệp quốc tế thế giới) đến chi tiết (vi mô, nội địa, doanh nghiệp trong nước) để dễ đọc và hiểu.
+Tổng hợp nội dung một cách chi tiết với giọng văn khách quan và cấu trúc rõ ràng:
+1.	Mỗi phần phải bắt đầu bằng một tiêu đề chính có đánh số, đặt trên một dòng riêng.
+2.	Ngay dưới tiêu đề chính, các ý quan trọng phải được liệt kê thành từng dòng riêng biệt để dễ đọc.
+3.	Nội dung phải được sắp xếp theo trình tự hợp lý, từ tổng quan đến chi tiết, đảm bảo sự logic: 
+    - Vĩ mô: Cấp độ quốc tế, các xu hướng toàn cầu, tác động đến nền kinh tế thế giới.
+    - Trung gian: Doanh nghiệp quốc tế, tập đoàn lớn, ảnh hưởng của các chính sách toàn cầu.
+    - Vi mô: Tình hình trong nước, doanh nghiệp nội địa, tác động đến người dân và thị trường trong nước.
 Quy tắc:
-- Giữ nguyên ngôn ngữ gốc của đoạn văn.
-- Chỉ trả về nội dung tổng hợp, không thêm lời dẫn hay bình luận.
-- Không tự ý thêm, sửa đổi hay suy diễn nội dung không có trong đoạn gốc.
-- Giữ giọng văn khách quan xuyên suốt.
-- Nếu đoạn văn có phần trả lời câu hỏi của người xem, phần đó phải được đưa vào nội dung.
+• Giữ nguyên ngôn ngữ gốc của đoạn văn, không dịch hoặc diễn giải lại bằng ngôn ngữ khác.
+• Chỉ trả về nội dung tổng hợp, không thêm phần mở đầu, kết luận hay bất kỳ bình luận nào bên ngoài nội dung gốc.
+• Không thêm, bịa đặt hoặc suy diễn bất kỳ thông tin nào không có trong đoạn văn gốc.
+• Giữ giọng văn khách quan xuyên suốt, không đưa cảm xúc cá nhân vào nội dung.
+• Nếu đoạn văn có phần trả lời câu hỏi của người xem, phần đó phải được đưa vào đầy đủ mà không bị lược bỏ hoặc thay đổi ý nghĩa.
 """,
         functions=[],
         model_config={
