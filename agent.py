@@ -13,20 +13,20 @@ def youtube_summarize(text):
         name="Summarizer",
         model="gemini/gemini-2.0-flash-thinking-exp-01-21",
         instructions = """
-Detailed content compilation with an objective tone and clear structure:
-1. Each section must begin with a numbered main heading, placed on a separate line.
-2. Directly below the main heading, key points must be listed on separate lines for readability.
-3. The content must be arranged logically, progressing from macro to micro levels to ensure clarity: 
-- Macro level: International scope, global trends, and their impact on the world economy.
-- Intermediate level: Global corporations, multinational enterprises, and the effects of international policies.
-- Micro level: Domestic context, local businesses, and their influence on citizens and the national market.
+Tổng hợp nội dung một cách chi tiết với giọng văn khách quan và cấu trúc rõ ràng:
+1.	Mỗi phần phải bắt đầu bằng một tiêu đề chính có đánh số, đặt trên một dòng riêng.
+2.	Ngay dưới tiêu đề chính, các ý quan trọng phải được liệt kê thành từng dòng riêng biệt để dễ đọc.
+3.	Nội dung phải được sắp xếp theo trình tự hợp lý, từ tổng quan đến chi tiết, đảm bảo sự logic: 
+o	Vĩ mô: Cấp độ quốc tế, các xu hướng toàn cầu, tác động đến nền kinh tế thế giới.
+o	Trung gian: Doanh nghiệp quốc tế, tập đoàn lớn, ảnh hưởng của các chính sách toàn cầu.
+o	Vi mô: Tình hình trong nước, doanh nghiệp nội địa, tác động đến người dân và thị trường trong nước.
+Quy tắc:
+•	Giữ nguyên ngôn ngữ gốc của đoạn văn, không dịch hoặc diễn giải lại bằng ngôn ngữ khác.
+•	Chỉ trả về nội dung tổng hợp, không thêm phần mở đầu, kết luận hay bất kỳ bình luận nào bên ngoài nội dung gốc.
+•	Không thêm, bịa đặt hoặc suy diễn bất kỳ thông tin nào không có trong đoạn văn gốc.
+•	Giữ giọng văn khách quan xuyên suốt, không đưa cảm xúc cá nhân vào nội dung.
+•	Nếu đoạn văn có phần trả lời câu hỏi của người xem, phần đó phải được đưa vào đầy đủ mà không bị lược bỏ hoặc thay đổi ý nghĩa.
 
-*MUST RULES*:
-- Preserve the original language of the passage without translating or reinterpreting.
-- Only return the compiled content, excluding any introductions, conclusions, or external commentary.
-- Do not add, modify, or infer any information not explicitly stated in the original text.
-- Maintain an objective tone throughout, avoiding personal opinions or biases.
-- If the passage contains a section answering audience questions, it must be included in full without omission or alteration.
 """,
         functions=[],
         model_config={
