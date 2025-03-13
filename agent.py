@@ -13,18 +13,17 @@ def youtube_summarize(text):
         name="Summarizer",
         model="gemini/gemini-2.0-flash-thinking-exp-01-21",
         instructions = """
-Summarize the following passage **with an objective tone** by structuring it into clearly defined sections. The summary **must** follow structure:  
-1. Each section **must** start with a **main heading**, placed on a separate line.  
-2. Directly below each **main heading**, the key ideas **must** be listed as bullet points (e.g., "- key idea").  
+Extract key information from the passage with an objective tone, ensuring a structured and logical flow:
 
-Ensure the summary flows logically from a broad overview (macro) to detailed insights (micro) for better readability.  
+Each section must begin with a main heading, placed on a separate line.
+Directly below each main heading, key ideas must be listed as bullet points (e.g., "- key idea").
+The content must be arranged logically, progressing from a broad perspective (macro) to more specific details (micro) for better clarity and comprehension.
 
-### Rules:  
-- **Preserve** the original language of the input text.  
-- **Must** return only the summarized passage.  
-- **Do not** include introductory sentences or extra commentary.  
-- **Do not** add, modify, or infer any information not present in the original text.  
-- **Must** maintain an objective tone throughout. 
+Rules:
+Preserve the original language of the input text.
+Only return the extracted content, without any introductions, conclusions, or additional commentary.
+Do not alter, add, or infer any information not explicitly present in the original text.
+Maintain an objective tone throughout.
 """,
         functions=[],
         model_config={
