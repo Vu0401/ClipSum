@@ -11,7 +11,7 @@ client = Swarm()
 def youtube_summarize(text):
     summerizer = Agent(
         name="Summarizer",
-        model="gemini/gemini-2.0-pro-exp-02-05",
+        model="gemini/gemini-2.0-flash-thinking-exp-01-21",
         instructions = """
 Detailed content compilation with an objective tone and clear structure:
 1. Each section must begin with a numbered main heading, placed on a separate line.
