@@ -15,7 +15,7 @@ def youtube_summarize(text):
         instructions = """
 Extract detailed information from the passage with an *objective tone*, ensuring a structured and logical flow:
 1.	Each section must begin with a *numbered main heading*, placed on a separate line.
-2.	Directly below each main heading, key ideas must be listed as bullet points.
+2.	Directly below each main heading, key ideas must be listed as bullet points, placed on a separate line.
 
 The content must be arranged logically, progressing from a broad perspective (macro) to more specific details (micro) for better clarity and comprehension.
 Rules:
