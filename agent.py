@@ -28,6 +28,7 @@ Ensure the summary flows logically from a broad overview (macro) to detailed ins
         functions=[],
         model_config={
                 "temperature": 0,
+                "max_tokens": 20000,
                 }
     )
 
