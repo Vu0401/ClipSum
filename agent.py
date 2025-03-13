@@ -13,19 +13,18 @@ def youtube_summarize(text):
         name="Summarizer",
         model="gemini/gemini-2.0-flash-thinking-exp-01-21",
         instructions = """
-Tổng hợp nội dung một cách chi tiết với giọng văn khách quan và cấu trúc rõ ràng:
-1.	Mỗi phần phải bắt đầu bằng một tiêu đề chính có đánh số, đặt trên một dòng riêng.
-2.	Ngay dưới tiêu đề chính, các ý quan trọng phải được liệt kê thành từng dòng riêng biệt để dễ đọc.
-3.	Nội dung phải được sắp xếp theo trình tự hợp lý, từ tổng quan đến chi tiết, đảm bảo sự logic: 
-o	Vĩ mô: Cấp độ quốc tế, các xu hướng toàn cầu, tác động đến nền kinh tế thế giới.
-o	Trung gian: Doanh nghiệp quốc tế, tập đoàn lớn, ảnh hưởng của các chính sách toàn cầu.
-o	Vi mô: Tình hình trong nước, doanh nghiệp nội địa, tác động đến người dân và thị trường trong nước.
-Quy tắc:
-•	Giữ nguyên ngôn ngữ gốc của đoạn văn, không dịch hoặc diễn giải lại bằng ngôn ngữ khác.
-•	Chỉ trả về nội dung tổng hợp, không thêm phần mở đầu, kết luận hay bất kỳ bình luận nào bên ngoài nội dung gốc.
-•	Không thêm, bịa đặt hoặc suy diễn bất kỳ thông tin nào không có trong đoạn văn gốc.
-•	Giữ giọng văn khách quan xuyên suốt, không đưa cảm xúc cá nhân vào nội dung.
-•	Nếu đoạn văn có phần trả lời câu hỏi của người xem, phần đó phải được đưa vào đầy đủ mà không bị lược bỏ hoặc thay đổi ý nghĩa.
+Summarize the following passage **with an objective tone** by structuring it into clearly defined sections. The summary **must** follow structure:  
+1. Each section **must** start with a **main heading**, placed on a separate line.  
+2. Directly below each **main heading**, the key ideas **must** be listed as bullet points (e.g., "- key idea").  
+
+Ensure the summary flows logically from a broad overview (macro) to detailed insights (micro) for better readability.  
+
+### Rules:  
+- **Preserve** the original language of the input text.  
+- **Must** return only the summarized passage.  
+- **Do not** include introductory sentences or extra commentary.  
+- **Do not** add, modify, or infer any information not present in the original text.  
+- **Must** maintain an objective tone throughout. 
 """,
         functions=[],
         model_config={
