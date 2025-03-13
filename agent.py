@@ -12,24 +12,26 @@ def youtube_summarize(text):
     summerizer = Agent(
         name="Summarizer",
         model="gemini/gemini-2.0-pro-exp-02-05",
-        instructions = """Summarize the following passage with an objective tone by structuring it into clearly defined sections. The summary must follow a two-level structure:
+        instructions = """
+Detailed content compilation with an objective tone and clear structure:
+1.	Each section must begin with a numbered main heading, placed on a separate line.
+2.	Directly below the main heading, key points must be listed on separate lines for readability.
+3.	The content must be arranged logically, progressing from macro to micro levels to ensure clarity: 
+- Macro level: International scope, global trends, and their impact on the world economy.
+- Intermediate level: Global corporations, multinational enterprises, and the effects of international policies.
+- Micro level: Domestic context, local businesses, and their influence on citizens and the national market.
 
-Each section must start with a main heading, placed on a separate line.
-Directly below each main heading, the key ideas must be listed as bullet points (e.g., "- key idea").
-Ensure the summary flows logically from a broad overview (macro) to detailed insights (micro) for better readability.
-
-Rules:
-Preserve the original language of the input text.
-Must return only the summarized passage.
-Do not include introductory sentences or extra commentary.
-Do not add, modify, or infer any information not present in the original text.
-Must maintain an objective tone throughout.
-If the passage includes a section answering audience questions, it must be included in the summary.
+*MUST Rules*:
+- Preserve the original language of the passage without translating or reinterpreting.
+- Only return the compiled content, excluding any introductions, conclusions, or external commentary.
+- Do not add, modify, or infer any information not explicitly stated in the original text.
+- Maintain an objective tone throughout, avoiding personal opinions or biases.
+- If the passage contains a section answering audience questions, it must be included in full without omission or alteration.
 """,
         functions=[],
         model_config={
                 "temperature": 0,
-                "max_tokens": 20000,
+                "max_tokens": 500000,
                 }
     )
 
