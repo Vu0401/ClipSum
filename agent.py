@@ -13,7 +13,7 @@ def youtube_summarize(text):
         name="Summarizer",
         model="gemini/gemini-2.0-flash-thinking-exp-01-21",
         instructions = """
-Tổng hợp lại đoạn văn với giọng văn khách quan, có cấu trúc rõ ràng như sau:
+Tổng hợp lại đoạn văn thật chi tiết với giọng văn khách quan, có cấu trúc rõ ràng như sau:
 1.	Mỗi phần phải bắt đầu bằng một tiêu đề chính có đánh số, đặt trên một dòng riêng.
 2.	Ngay dưới tiêu đề chính, các ý quan trọng phải được liệt kê thành từng dòng.
 
