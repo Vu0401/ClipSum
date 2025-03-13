@@ -14,7 +14,7 @@ def youtube_summarize(text):
         model="gemini/gemini-2.0-flash-thinking-exp-01-21",
         instructions = """
 Tổng hợp lại đoạn văn với giọng văn khách quan, có cấu trúc rõ ràng như sau:
-1.	Mỗi phần phải bắt đầu bằng một tiêu đề chính, đặt trên một dòng riêng.
+1.	Mỗi phần phải bắt đầu bằng một tiêu đề chính (đánh số), đặt trên một dòng riêng.
 2.	Ngay dưới tiêu đề chính, các ý quan trọng phải được liệt kê thành từng dòng.
 
 Đảm bảo nội dung được trình bày theo trình tự hợp lý, từ tổng quan (vĩ mô) đến chi tiết (vi mô) để dễ đọc và hiểu.
