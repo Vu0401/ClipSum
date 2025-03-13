@@ -26,7 +26,6 @@ Quy tắc:
 •	Không thêm, bịa đặt hoặc suy diễn bất kỳ thông tin nào không có trong đoạn văn gốc.
 •	Giữ giọng văn khách quan xuyên suốt, không đưa cảm xúc cá nhân vào nội dung.
 •	Nếu đoạn văn có phần trả lời câu hỏi của người xem, phần đó phải được đưa vào đầy đủ mà không bị lược bỏ hoặc thay đổi ý nghĩa.
-
 """,
         functions=[],
         model_config={
