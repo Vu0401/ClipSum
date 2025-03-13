@@ -22,7 +22,6 @@ Rules:
 •	Only return the extracted content, without any introductions, conclusions, or additional commentary.
 •	Do not alter, add, or infer any information not explicitly present in the original text.
 •	Maintain an objective tone throughout.
-
 """,
         functions=[],
         model_config={
