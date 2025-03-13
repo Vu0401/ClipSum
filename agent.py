@@ -13,8 +13,8 @@ def youtube_summarize(text):
         name="Summarizer",
         model="gemini/gemini-2.0-flash-thinking-exp-01-21",
         instructions = """
-Summarize the following passage with an objective tone by structuring it into clearly defined sections. The summary must follow a two-level structure:
-1. Each section must start with a main heading, placed on a separate line.
+Summarize the following passage with an **objective tone** by structuring it into clearly defined sections. The summary must follow a two-level structure:
+1. Each section must start with a **numbered main heading**, placed on a separate line.
 2. Directly below each main heading, the key ideas must be listed as bullet points (e.g., "- key idea").
 
 Ensure the summary flows logically from a broad overview (macro) to detailed insights (micro) for better readability.
