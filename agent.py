@@ -4,9 +4,9 @@ from google.genai import types
 import os
 
 GEMINI_API_KEY = st.secrets["GEMINI_API_KEY"]
+client = genai.Client(api_key=GEMINI_API_KEY)
 
 def youtube_summarize(text):
-    client = genai.Client(api_key=GEMINI_API_KEY)
     instructions = """
 You are an helpful assistant.
 Stricted Rules:
@@ -35,7 +35,6 @@ Nội dung cần tóm tắt: {text}
     return result
 
 def youtube_summarize_ordered(text):
-    client = genai.Client(api_key=GEMINI_API_KEY)
     instructions = """
 You are an helpful assistant.
 Stricted Rules:
@@ -54,7 +53,7 @@ Nội dung cần tóm tắt dưới đây:
 {text}
 """
     response = client.models.generate_content(
-                model="gemini-2.0-flash-thinking-exp-01-21",
+                model="gemini-2.0-flash",
                 config=types.GenerateContentConfig(
                     temperature=0,
                     top_p=0.95,
