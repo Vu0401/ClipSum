@@ -1,7 +1,7 @@
 import streamlit as st
 import time
 from youtube_transcript_api import YouTubeTranscriptApi as yta
-from agent import youtube_summarize
+from agent import youtube_summarize, youtube_summarize_ordered  # Added youtube_summarize_ordered
 import os 
 import base64
 from PIL import Image
@@ -28,6 +28,16 @@ def youtube_summarize_with_retry(text, retries=5, delay=5):
     for attempt in range(retries):
         try:
             return youtube_summarize(text)
+        except Exception as e:
+            if attempt < retries - 1:
+                time.sleep(delay)
+            else:
+                raise e
+
+def youtube_summarize_ordered_with_retry(text, retries=5, delay=5):  # New function for ordered summary
+    for attempt in range(retries):
+        try:
+            return youtube_summarize_ordered(text)
         except Exception as e:
             if attempt < retries - 1:
                 time.sleep(delay)
@@ -75,7 +85,7 @@ def main():
             for summary in st.session_state["history"][-5:]:  # Display 5 most recent summaries
                 first_line = summary.split("\n")[2].strip("#").strip() if len(summary.split("\n")) > 2 else summary[:50]
                 if len(first_line) > 50:
-                    first_line = first_line[:50].strip("#").strip("*") + "..."
+                    first_line = first_line[:50].strip("#") + "..."
                 
                 # Each summary has its own expander
                 with st.sidebar.expander(f"🔹 {first_line}"):
@@ -84,12 +94,12 @@ def main():
             # Clear history button
             if st.sidebar.button("🗑️ Clear History"):
                 st.session_state["history"] = []
-                st.rerun()  # Updated to st.rerun()
+                st.rerun()
         else:
             st.sidebar.write("No summaries yet.")
     
     # Tabs at the bottom
-    tab1, tab2 = st.tabs(["Transcript", "Summarize"])
+    tab1, tab2, tab3 = st.tabs(["Transcript", "Summarize", "Summarize Ordered"])  # Added third tab
     
     with tab1:
         if st.button("Get Transcript 🚀"):
@@ -127,6 +137,32 @@ def main():
                         result = "\n\n" + youtube_summarize_with_retry(text)
                     
                     st.success("✅ Summary is ready!")
+                    st.markdown(
+                        f'<div style="border: 1px solid #ccc; padding: 10px; border-radius: 5px; height:400px; overflow-y: auto;">{result}</div>', 
+                        unsafe_allow_html=True
+                    )
+                    st.session_state["history"].append(result)
+                except Exception as e:
+                    st.error("⚠️ Cannot retrieve subtitles. Please check the language and try again.")
+            else:
+                st.error("⚠️ Please enter a YouTube URL.")
+
+    with tab3:  # New tab for ordered summary
+        if st.button("Summarize Ordered 🚀"):
+            if youtube_url:
+                try:
+                    if "v=" not in youtube_url:
+                        st.error("⚠️ Invalid URL! Please enter a valid YouTube URL.")
+                        return
+                    video_id = youtube_url.split("v=")[1].split("&")[0]
+                    with st.spinner("Extracting subtitles and summarizing (ordered)... This may take a moment!"):
+                        if "transcript" in st.session_state:
+                            text = st.session_state["transcript"]
+                        else:
+                            list_text = get_transcript_with_retry(video_id, AVAILABLE_LANGUAGES[selected_lang])
+                            text = " ".join([d["text"] for d in list_text])
+                        result = "\n\n" + youtube_summarize_ordered_with_retry(text)
+                    st.success("✅ Ordered Summary is ready!")
                     st.markdown(
                         f'<div style="border: 1px solid #ccc; padding: 10px; border-radius: 5px; height:400px; overflow-y: auto;">{result}</div>', 
                         unsafe_allow_html=True
