@@ -83,9 +83,9 @@ def main():
 
         if st.session_state["history"]:
             for summary in st.session_state["history"][-5:]:  # Display 5 most recent summaries
-                first_line = summary.split("\n")[2].strip("#").strip() if len(summary.split("\n")) > 2 else summary[:50]
-                if len(first_line) > 50:
-                    first_line = first_line[:50].strip("#") + "..."
+                first_line = summary.split("\n")[2].strip("#").strip() if len(summary.split("\n")) > 2 else summary[:30]
+                if len(first_line) > 30:
+                    first_line = first_line[:30].strip("#") + "..."
                 
                 # Each summary has its own expander
                 with st.sidebar.expander(f"🔹 {first_line}"):
