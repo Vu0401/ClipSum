@@ -20,7 +20,7 @@ Stricted Rules:
 Nội dung cần tóm tắt: {text}
 """
     response = client.models.generate_content(
-                model="gemini-2.5-flash-preview-04-17",
+                model="gemini-2.0-flash-thinking-exp-01-21",
                 config=types.GenerateContentConfig(
                     temperature=0,
                     top_p=0.95,
